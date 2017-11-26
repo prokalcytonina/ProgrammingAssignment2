@@ -2,10 +2,10 @@
 ## sample is the matrix object that user will submit on the console
 
 makeCacheMatrix <- function(x = matrix()) {
-        invsample <- NULL
+        invs <- NULL
   set <- function(x) {
     Sample <<- x
-    invsample <<- NULL
+    invs <<- NULL
   }
   get <- function() sample
   setInverse <- function(inverse) inv <<- inverse
@@ -29,7 +29,7 @@ cacheSolve <- function(x, ...) {
     return(invsample)
   }
   mat <- sample$get()
-  invsample <- solve(mat, ...)
+  invs <- solve(mat, ...)
   sample$setInverse(invsample)
-  invsample
+  invs
 }
